@@ -9,4 +9,4 @@ COPY requirements.txt /
 RUN pip3 install -r requirements.txt
 
 COPY random_baseline.py /
-
+ENTRYPOINT [ "python", "/random_baseline.py", "$inputDataset", "$outputDir" ]
