@@ -67,6 +67,9 @@ jobs:
           	>> $GITHUB_ENV 
       - name: Build, test, and upload image
         run: |
-          docker build -t ${{ env.IMAGE_TAG }} -f ${{ github.workspace }}/random-baseline-script
+          echo 'fafafa'
+          echo '${{ env.IMAGE_TAG }}'
+          echo 'fafafa'
+          docker build -t ${{ env.IMAGE_TAG }} -f ${{ github.workspace }}/${{ inputs.dockerpath }}
           tira-run --input-dataset <TODO-ADD-DATASET> --image ${{ env.IMAGE_TAG }} --push true
 
