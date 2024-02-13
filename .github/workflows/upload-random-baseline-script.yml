@@ -1,4 +1,4 @@
-name: Upload Random Baseline Script
+name: Upload Script Submission From Directory
 on: 
   workflow_dispatch:
     inputs:
@@ -70,6 +70,6 @@ jobs:
           echo 'fafafa'
           echo '${{ env.IMAGE_TAG }}'
           echo 'fafafa'
-          docker build -t ${{ env.IMAGE_TAG }} -f ${{ github.workspace }}/${{ inputs.dockerpath }}
+          docker build -t ${{ env.IMAGE_TAG }} ${{ github.workspace }}/${{ inputs.dockerpath }}
           tira-run --input-dataset <TODO-ADD-DATASET> --image ${{ env.IMAGE_TAG }} --push true
 
