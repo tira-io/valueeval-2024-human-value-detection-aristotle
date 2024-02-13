@@ -69,4 +69,5 @@ jobs:
         run: |
           docker build -t ${{ env.IMAGE_TAG }} ${{ github.workspace }}/${{ inputs.dockerpath }}
           tira-run --input-directory toy-dataset --image ${{ env.IMAGE_TAG }} --push true
+          head -3 tira-output/predictions.csv
 
